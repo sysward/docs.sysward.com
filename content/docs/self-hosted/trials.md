@@ -7,32 +7,47 @@ lastmod: 2020-11-12T13:26:54+01:00
 draft: false
 images: []
 menu:
-docs:
-parent: "self-hosted"
+  docs:
+    parent: "self-hosted"
 weight: 610
 toc: true
 ---
 
-foo
-
 ## Trials
 
-Head on over to the [license dashboard](https://appliance.sysward.com/) and click on the "Install" button next to the license you want to upgrade.
+### How do I get the appliance?
 
-From there you will see upgrade instructions which will have a CalVer of the image to pull, similar to this (please note you'll need to login to get the latest version):
+Please head over to the appliance manager and login at [https://appliance.sysward.com/](https://appliance.sysward.com/)
 
-1. Login to your appliance server
-2. Swap to your root user `sudo su`
-3. Run the command you grabbed from your license page, it should look similar to this:
+### How is billing handled?
 
-```bash
-k set image deployment/sysward sysward=appliance-registry.sysward.com/appliance:2021.05.02.805125918 sysward-cve=appliance-registry.sysward.com/appliance:2021.05.02.805125918
-```
+We use Chargebee to manage our customers which lets you pay with either Stripe or PayPal.
 
-4. Wait for your pods to go into a running state
+### How do I Pay for a license?
 
-```bash
-k get po
-```
+You can pay for your license by clicking on the `View` button and clicking "Subscribe".
 
-5. Login to the dashboard to start using the new version.
+The state will change from `pending` to `active` once payment has been processed.
+
+### How do I manage my billing information or cancel?
+
+Please head over to the appliance manager and login at [https://appliance.sysward.com/](https://appliance.sysward.com/)
+
+Once you've logged in you can click on `Billing Management` up in the navigation header.
+
+You can cancel and update your information from there.
+
+### How many agents does a trial get?
+
+You can have up to 10 agents for your trial period.
+
+If you need more please reach out to support.
+
+### How long do trials last?
+
+Trials last 14 days from creation and can be extended by reaching out to support.
+
+### I would prefer to have invoices, do you offer Net 30?
+
+For larger customers we can generate invoices with net terms.
+
