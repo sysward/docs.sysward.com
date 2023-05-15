@@ -11,8 +11,8 @@
   autoLaunch = false
 
 [build.environment]
-  NODE_VERSION = "19.6.0"
-  NPM_VERSION = "9.4.0"
+  NODE_VERSION = "16.16.0"
+  NPM_VERSION = "8.11.0"
 
 [context.production]
   command = "npx hugo --gc --minify -b $URL && npm run build:functions"
