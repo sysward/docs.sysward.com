@@ -5,6 +5,12 @@
   url = "/docs/general/"
 
 [[docs]]
+  name = "Agent"
+  weight = 11
+  identifier = "agent"
+  url = "/docs/agent/"
+
+[[docs]]
   name = "Self-Hosted Appliance"
   weight = 20
   identifier = "self-hosted"

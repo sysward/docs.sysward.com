@@ -21,16 +21,11 @@ From there you will see upgrade instructions which will have a CalVer of the ima
 
 1. Login to your appliance server
 2. Swap to your root user `sudo su`
-3. Run the command you grabbed from your license page, it should look similar to this:
+3. Run the upgrade script to check for new updates and upgrade
 
 ```bash
-k set image deployment/sysward sysward=appliance-registry.sysward.com/appliance:2021.05.02.805125918 sysward-cve=appliance-registry.sysward.com/appliance:2021.05.02.805125918
+cd /opt/sysward
+./upgrade.sh
 ```
 
-4. Wait for your pods to go into a running state
-
-```bash
-k get po
-```
-
-5. Login to the dashboard to start using the new version.
+4. Login to the dashboard to start using the new version.

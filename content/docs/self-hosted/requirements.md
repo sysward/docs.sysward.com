@@ -9,13 +9,13 @@ images: []
 menu:
   docs:
     parent: "self-hosted"
-weight: 620
+weight: 600
 toc: true
 ---
 
 ## System requirements
 
-* Operating System: Ubuntu 20.04 LTS
+* Operating System: Ubuntu 20.04 LTS or 22 LTS
 * Internet connectivity to talk to the license server
   * We do not support air gapped environments at this time
 
@@ -23,10 +23,10 @@ toc: true
 
 * CPU: 1 Cores
 * Memory: 4GB RAM
-* Disk: 20GB
+* Disk: 70GB
 
-### Reccomended
+### Recommended
 
 * CPU: 2 Cores
 * Memory: 8GB RAM
-* Disk: 60GB
+* Disk: 80GB
