@@ -19,6 +19,9 @@
     </ul>
     <div class="collapse navbar-collapse order-4 order-md-1">
       <ul class="navbar-nav main-nav me-auto order-5 order-md-2">
+        <li class="nav-item">
+          <a class="nav-link" href="https://sysward.com/">Home</a>
+        </li>
         {{- $current := . -}}
         {{ range .Site.Menus.main -}}
           {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}

@@ -44,11 +44,11 @@ alertText = "Like Doks? <a class=\"alert-link\" href=\"https://github.com/h-enk/
 
 # Edit Page
 docsRepo = "https://github.com/sysward/docs.sysward.com"
-editPage = false
+editPage = true
 
 [options]
   lazySizes = true
-  clipBoard = false
+  clipBoard = true
   instantPage = true
   flexSearch = true
   darkMode = true
