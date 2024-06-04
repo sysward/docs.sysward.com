@@ -15,7 +15,7 @@ toc: true
 
 ## System requirements
 
-* Operating System: Ubuntu 20.04 LTS or 22 LTS
+* Operating System: Ubuntu 20 LTS or 22 LTS or 24 LTS
 * Internet connectivity to talk to the license server
   * We do not support air gapped environments at this time
 
