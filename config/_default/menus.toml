@@ -1,24 +1,42 @@
 [[docs]]
-  name = "General"
+  name = "Getting Started"
   weight = 10
-  identifier = "general"
-  url = "/docs/general/"
+  identifier = "getting-started"
+  url = "/docs/getting-started/quick-start/"
 
 [[docs]]
-  name = "Agent"
-  weight = 11
-  identifier = "agent"
-  url = "/docs/agent/"
+  name = "Using SysWard"
+  weight = 20
+  identifier = "using-sysward"
+  url = "/docs/using-sysward/dashboard/"
+
+[[docs]]
+  name = "Account & Billing"
+  weight = 30
+  identifier = "account-billing"
+  url = "/docs/account-billing/organization/"
+
+[[docs]]
+  name = "Integrations"
+  weight = 40
+  identifier = "integrations"
+  url = "/docs/integrations/webhooks/"
 
 [[docs]]
   name = "Self-Hosted Appliance"
-  weight = 20
+  weight = 50
   identifier = "self-hosted"
-  url = "/docs/self-hosted/"
+  url = "/docs/self-hosted/requirements/"
+
+[[docs]]
+  name = "Reference"
+  weight = 60
+  identifier = "reference"
+  url = "/docs/reference/supported-operating-systems/"
 
 [[main]]
   name = "Docs"
-  url = "/docs/general/quick-start/"
+  url = "/docs/getting-started/quick-start/"
   weight = 10
 
 

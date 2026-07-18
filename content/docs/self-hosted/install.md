@@ -1,56 +1,60 @@
 ---
 title: "Installation"
-description: "How to install the server for self-hosted SysWard installation"
+description: "Install the self-hosted SysWard appliance on an Ubuntu server."
 lead: ""
 date: 2020-11-12T13:26:54+01:00
-lastmod: 2020-11-12T13:26:54+01:00
+lastmod: 2026-07-18T00:00:00+00:00
 draft: false
 images: []
 menu:
   docs:
     parent: "self-hosted"
-weight: 601
+    identifier: "appliance-install"
+weight: 30
 toc: true
 ---
 
-## Installation
-
-Head on over to the [license dashboard](https://appliance.sysward.com/) and click on the "Install" button.
-
-From there you will see an installation script similar to this:
+Check the [requirements](/docs/self-hosted/requirements/) first, then head to the
+[license dashboard](https://appliance.sysward.com/) and click **Install** to get
+an installation script prefilled with your license key, similar to:
 
 ```bash
 wget https://updates.sysward.com/appliance.tar.gz; tar xzvf appliance.tar.gz
 LICENSE_KEY="KEY_HERE" EMAIL="YOUR_EMAIL_HERE" ./appliance/installer.sh
 ```
 
-1. Login to your appliance server
-2. Swap to your root user `sudo su`
-3. Run the installation script to install the appliance.
-4. Login to the dashboard to start using the new version.
+To install:
 
-You can visit your appliance now at `https://<your-appliance-ip>`.
+1. Log in to your appliance server.
+2. Switch to the root user: `sudo su`.
+3. Run the installation script.
+4. When it finishes, visit `https://<your-appliance-ip>` and sign in.
 
-If you wish to put your own certificates in place instead of the self-signed/generated ones,
-you can do so by replacing the `sysward.crt` and `sysward.key` files in `/opt/sysward/` and restarting nginx.
+## What the installer sets up
+
+Everything runs on the one server, under `/opt/sysward`:
+
+- the SysWard web application (systemd service `sysward`) behind **nginx** on
+  port 443, with a self-signed certificate generated during install
+- the CVE sync service (systemd service `sysward-cve`)
+- **PostgreSQL** with two databases (`sysward` and `cve`)
+- **NATS** for background job processing (systemd service `nats`)
+- your license key and database settings in `/opt/sysward/.env`
+
+Because the certificate is self-signed, your browser will show a security
+warning the first time — accept it to proceed, or install your own certificate
+(see [Custom SSL Certificates](/docs/self-hosted/custom-ssl/)).
 
 ## Where is my password?
 
-Towards the end of the installation script, highlighted, you should see a password created for you:
+Near the end of the installer output, a password is generated and printed for
+you:
 
-```bash
+```text
 ---------------------
 Password:  2cd84674-4b2e-4091-a607-75345cd457ec
 ---------------------
-Generating a RSA private key
-..........++++
-...................................................++++
-writing new private key to 'sysward.key'
------
---2023-05-15 13:21:04--  https://updates.sysward.com/appliance-version
-Resolving updates.sysward.com (updates.sysward.com)... 18.165.32.80, 18.165.32.91, 18.165.32.69, ...
-Connecting to updates.sysward.com (updates.sysward.com)|18.165.32.80|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 18 [binary/octet-stream]
-Saving to: ‘appliance-version’
 ```
+
+Use it with your email address to sign in. Lost it? See the
+[FAQ](/docs/self-hosted/faq/) for the reset command.

@@ -17,4 +17,3 @@ __TLDR__: We do not use cookies and we do not collect any personal data.
 - No information is shared with advertising companies.
 - No information is mined and harvested for personal and behavioral trends.
 - No information is monetized.
-

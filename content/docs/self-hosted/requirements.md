@@ -3,21 +3,24 @@ title: "Requirements"
 description: "Requirements for the self hosted appliance"
 lead: ""
 date: 2020-11-12T15:22:20+01:00
-lastmod: 2020-11-12T15:22:20+01:00
+lastmod: 2026-07-09T00:00:00+00:00
 draft: false
 images: []
 menu:
   docs:
     parent: "self-hosted"
-weight: 600
+weight: 20
 toc: true
 ---
 
 ## System requirements
 
-* Operating System: Ubuntu 20 LTS or 22 LTS or 24 LTS
-* Internet connectivity to talk to the license server
-  * We do not support air gapped environments at this time
+* Operating System: Ubuntu 20 LTS, 22 LTS, or 24 LTS
+* Internet connectivity to reach the license server
+
+Need a **fully air-gapped installation**?
+[Reach out to us](https://sysward.com/contact) — we can work with you on an
+offline deployment.
 
 ### Minimum
 
