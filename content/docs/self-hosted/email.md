@@ -1,30 +1,24 @@
 ---
 title: "Email Configuration"
-description: "Configuring email settings for the appliance"
+description: "Configure SMTP so the appliance can send email notifications."
 lead: ""
 date: 2020-11-12T13:26:54+01:00
-lastmod: 2020-11-12T13:26:54+01:00
+lastmod: 2026-07-18T00:00:00+00:00
 draft: false
 images: []
 menu:
   docs:
     parent: "self-hosted"
-weight: 615
+weight: 40
 toc: true
 ---
 
-By default, the email server settings are not configured. If you have a working email server you can continue to the steps below to get email notifications.
+Email delivery is not configured by default. If you have an SMTP server, follow
+the steps below to enable email notifications.
 
-## Configuring Email Server
+## Configure the SMTP server
 
-
-To set up email delivery you'll need to login to your appliance server.
-
-```bash
-cd /opt/sysward
-```
-
-Next open up the `.env` file and add the following lines:
+Log in to your appliance server and open `/opt/sysward/.env`, then add:
 
 ```bash
 SMTP_HOST=""
@@ -32,7 +26,8 @@ SMTP_PORT=""
 SMTP_USER=""
 SMTP_PASSWORD=""
 ```
-After doing that you can close the file and then restart the application:
+
+Save the file and restart the application:
 
 ```bash
 sudo systemctl restart sysward
@@ -40,10 +35,14 @@ sudo systemctl restart sysward
 
 Email should now be working.
 
-You can also verify that the environment variables got loaded by `systemd` by checking `proc`
-and looking for the `sysward` process:
+## Verify the settings were loaded
+
+You can confirm systemd passed the environment variables to the running
+process:
 
 ```bash
-ps ax | grep syswawrd
-cat /proc/PID/env
+ps ax | grep sysward
+cat /proc/PID/environ | tr '\0' '\n' | grep SMTP
 ```
+
+(Replace `PID` with the `sysward` process ID from the first command.)

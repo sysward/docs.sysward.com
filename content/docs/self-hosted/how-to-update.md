@@ -1,31 +1,37 @@
 ---
 title: "How to Update"
-description: "How to update the server for a self hosted SysWard installation"
+description: "Upgrade the self-hosted appliance to the latest version."
 lead: ""
 date: 2020-11-12T13:26:54+01:00
-lastmod: 2020-11-12T13:26:54+01:00
+lastmod: 2026-07-18T00:00:00+00:00
 draft: false
 images: []
 menu:
   docs:
     parent: "self-hosted"
-weight: 610
+weight: 50
 toc: true
 ---
 
-## Grab the latest version
+## Run the upgrade script
 
-Head on over to the [license dashboard](https://appliance.sysward.com/) and click on the "Install" button next to the license you want to upgrade.
+1. Log in to your appliance server.
+2. Switch to the root user: `sudo su`.
+3. Run the upgrade script:
 
-From there you will see upgrade instructions which will have a CalVer of the image to pull, similar to this (please note you'll need to login to get the latest version):
+   ```bash
+   cd /opt/sysward
+   ./upgrade.sh
+   ```
 
-1. Login to your appliance server
-2. Swap to your root user `sudo su`
-3. Run the upgrade script to check for new updates and upgrade
+4. Log in to the dashboard to start using the new version.
 
-```bash
-cd /opt/sysward
-./upgrade.sh
-```
+The script compares your installed version against the latest release; if a
+newer version is available it downloads it, runs database migrations, and
+restarts the `sysward` and `sysward-cve` services. If you're already up to
+date it prints `No upgrade available` and changes nothing.
 
-4. Login to the dashboard to start using the new version.
+{{< alert icon="💡" text="Want to check whether an upgrade is available without applying it? See the FAQ for the version-check commands." >}}
+
+Before a major upgrade, consider taking a backup — see
+[Backup & Restore](/docs/self-hosted/backup-restore/).

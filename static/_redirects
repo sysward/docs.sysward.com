@@ -1,0 +1,16 @@
+# Docs IA restructure (2026-07): old /docs/general and /docs/agent paths -> section-scoped URLs
+/docs/general/quick-start/      /docs/getting-started/quick-start/       301
+/docs/general/install/          /docs/getting-started/install/           301
+/docs/general/uninstall/        /docs/getting-started/uninstall/         301
+/docs/agent/troubleshooting/    /docs/getting-started/troubleshooting/   301
+/docs/general/dashboard/        /docs/using-sysward/dashboard/           301
+/docs/general/agents/           /docs/using-sysward/agents/              301
+/docs/general/groups/           /docs/using-sysward/groups/              301
+/docs/general/packages/         /docs/using-sysward/packages/            301
+/docs/general/cves/             /docs/using-sysward/cves/                301
+/docs/general/scheduled_jobs/   /docs/using-sysward/scheduled_jobs/      301
+/docs/general/organization/     /docs/account-billing/organization/      301
+/docs/general/profile/          /docs/account-billing/profile/           301
+/docs/general/subscription/     /docs/account-billing/subscription/      301
+/docs/general/                  /docs/                                   301
+/docs/agent/                    /docs/                                   301

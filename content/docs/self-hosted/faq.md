@@ -3,23 +3,22 @@ title: "FAQ"
 description: "Appliance frequently asked questions"
 lead: ""
 date: 2020-11-12T13:26:54+01:00
-lastmod: 2020-11-12T13:26:54+01:00
+lastmod: 2026-07-18T00:00:00+00:00
 draft: false
 images: []
 menu:
   docs:
     parent: "self-hosted"
-weight: 615
+weight: 90
 toc: true
 ---
 
 ## How do I know if an upgrade is available without upgrading?
 
-
-Check the remote version with the following command:
+Check the remote version:
 
 ```bash
-echo $(curl https://updates.sysward.com/appliance-version)
+curl https://updates.sysward.com/appliance-version
 ```
 
 Check your local version:
@@ -28,14 +27,14 @@ Check your local version:
 cat /opt/sysward/appliance-version
 ```
 
-If they do not match there is a newer version available.
+If they don't match, a newer version is available — see
+[How to Update](/docs/self-hosted/how-to-update/).
 
 ## How do I install a custom SSL certificate?
 
-Replace the following two files in `/opt/sysward` with your own:
-
-* `sysward.crt`
-* `sysward.key`
+Replace `/opt/sysward/sysward.cert` and `/opt/sysward/sysward.key` with your
+own and restart nginx. Full details:
+[Custom SSL Certificates](/docs/self-hosted/custom-ssl/).
 
 ## How do I restart nginx?
 
@@ -43,12 +42,23 @@ Replace the following two files in `/opt/sysward` with your own:
 sudo systemctl restart nginx
 ```
 
+## How do I back up the appliance?
+
+Dump the PostgreSQL databases and save your `.env` — see
+[Backup & Restore](/docs/self-hosted/backup-restore/).
+
 ## I've lost my password
 
-1. Swap to your root user `sudo su`
-2. Run the reset password script below:
+1. Switch to the root user: `sudo su`
+2. Run the password reset command:
 
 ```bash
 cd /opt/sysward
-source .env && ./web tasks users:reset YOUR_EMAIL_HERE
- ```
+source .env && ./web users:reset YOUR_EMAIL_HERE
+```
+
+## Does the appliance work air-gapped?
+
+An internet connection to the license server is required by default. If you
+need a fully air-gapped installation,
+[reach out to us](https://sysward.com/contact).
